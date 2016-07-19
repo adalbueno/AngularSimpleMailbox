@@ -40,13 +40,12 @@ var paths = {
   componentsJS: [ 'assets/components/**/*.min.js'],
   componentsCSS: ['assets/components/**/*.min.css'],
   vendorJS: ['vendor/**/*.js'],
-  vendorCSS: ['vendor/**/*.css'],
-  images: ['assets/img/**']
+  vendorCSS: ['vendor/**/*.css']
 };
 
 var errorAlert = function(error) {
   notify.onError({title: 'Error in <%= error.plugin %> plugin', message: '<%= error.message %>'})(error);
-  console.log('Oh no!!! There were errors in plugin and your changes will not be build. Please check!');
+  console.log('There were errors in plugin and your changes will not be build. Please check!');
 };
 
 gulp.task('clean', function(callback) {
@@ -57,12 +56,6 @@ gulp.task('clean', function(callback) {
 gulp.task('rootHTML', function() {
   return gulp.src(paths.root, {cwd: bases.src})
     .pipe(gulp.dest(bases.dest))
-    .pipe(connect.reload());
-});
-
-gulp.task('images', function() {
-  return gulp.src(paths.images, {cwd: bases.src})
-    .pipe(gulp.dest(bases.dest + 'img'))
     .pipe(connect.reload());
 });
 
@@ -164,7 +157,6 @@ gulp.task('appCSS', function() {
 
 gulp.task('watch', function() {
   gulp.watch(paths.root, {cwd: bases.src, interval: 1000, debounceDelay: 1000, mode: 'poll'}, ['rootHTML']);
-  gulp.watch(paths.images, {cwd: bases.src, interval: 1000, debounceDelay: 1000, mode: 'poll'}, ['images']);
   gulp.watch(paths.data, {cwd: bases.src, interval: 1000, debounceDelay: 1000, mode: 'poll'}, ['data']);
   gulp.watch(paths.views, {cwd: bases.src, interval: 1000, debounceDelay: 1000, mode: 'poll'}, ['views']);
   gulp.watch(paths.partials, {cwd: bases.src, interval: 1000, debounceDelay: 1000, mode: 'poll'}, ['partials']);
@@ -187,7 +179,6 @@ gulp.task('default', function(callback) {
   runSequence('clean',
     [
       'rootHTML',
-      'images',
       'views',
       'templates',
       'partials',
