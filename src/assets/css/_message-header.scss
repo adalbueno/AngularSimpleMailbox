@@ -1,0 +1,38 @@
+.message-header {
+  &--unread,
+  &--read {
+    font-weight: 500;
+    padding: 16px;
+  }
+
+  &__sender,
+  &__subject,
+  &__date {
+    display: block;
+  }
+
+  &__subject {
+    &:before {
+      content: '> ';
+      font-weight: 700;
+      color: $highlight-color;
+    }
+  }
+
+  &__date {
+    font-size: 80%;
+    color: rgba($main-color, .5);
+  }
+
+  .messages-list & {
+    &--unread,
+    &--read {
+      cursor: pointer;
+    }
+    &--read {
+      font-weight: 400;
+      color: rgba($main-color, .5);
+      background: rgba(white, .5);
+    }
+  }
+}

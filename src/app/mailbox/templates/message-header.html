@@ -1,0 +1,5 @@
+<div ng-class="ngModel.read ? 'message-header--read' : 'message-header--unread'">
+  <span class="message-header__sender" ng-bind="ngModel.sender"></span>
+  <span class="message-header__subject" ng-bind="ngModel.subject"></span>
+  <span class="message-header__date" ng-bind="ngModel.time_sent"></span>
+</div>

@@ -1,0 +1,7 @@
+<div class="message-details" ng-class="{ 'message-details--active' : !!ctrl.activeMessage }">
+  <div ng-if="ctrl.currentMessage">
+    <span class="message-details__close" ng-click="ctrl.activeMessage = false;">x</span>
+    <message-header ng-model="ctrl.currentMessage"></message-header>
+    <div class="message-body" ng-bind="ctrl.currentMessage.message"></div>
+  </div>
+</div>

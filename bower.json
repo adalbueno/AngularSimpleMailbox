@@ -1,0 +1,17 @@
+{
+  "name": "angularSimpleMailbox",
+  "version": "1.0.0",
+  "description": "Angular Simple Mailbox",
+  "authors": [
+    "Adalberto Diniz Bueno Junior"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.7"
+  }
+}

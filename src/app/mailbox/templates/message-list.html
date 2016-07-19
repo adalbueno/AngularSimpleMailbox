@@ -1,0 +1,8 @@
+<ul class="messages-list">
+  <li class="messages-list__item" ng-repeat="message in collection track by $index">
+    <span class="messages-list__delete" ng-click="remove(message)">x</span>
+    <message-header ng-model="message"
+                    ng-click="select(message)"
+                    ng-class="{ 'read': ctrl.read }"></message-header>
+  </li>
+</ul>
